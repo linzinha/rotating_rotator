@@ -3,7 +3,6 @@
 #############################
 import time
 from csv import writer
-from keygen import *
 from iterative_julius import *
 from writer import *
 from tkinter import filedialog
@@ -22,19 +21,19 @@ def key_generator():
 
 
 	def saveKey():
-		f = filedialog.asksaveasfile(mode='wb', defaultextension=".key")
+		create_file = filedialog.asksaveasfile(mode='wb', defaultextension=".key")
 		key = Fernet.generate_key()
 		global active_fernet_key
-		active_fernet_key = key
-		f.write(key)
-		f.close()
+		active_fernet_key = create_file.name
+		create_file.write(key)
+		create_file.close()
 
 	def saveNumKey():
-		g = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
+		create_file = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
 		global active_position_key
-		active_position_key = g
-		g.write()
-		g.close()
+		active_position_key = create_file.name
+		create_file.write()
+		create_file.close()
 
 
 	heading = Label(text="Generate a Fernet Key and a NumKey with the button below:", bg="aqua", fg="black", font="10", width="450", height="3").pack()
@@ -144,7 +143,7 @@ with open(active_position_key, 'a+') as write_obj:
 
 
 # Seventh encode position key
-print(active_position_key)
+# print("WEOEOEOEOEO" + active_position_key)
     
 lock_file()
 

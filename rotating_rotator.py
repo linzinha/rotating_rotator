@@ -32,7 +32,7 @@ def key_generator():
 		create_file = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
 		global active_position_key
 		active_position_key = create_file.name
-		create_file.write()
+		create_file.write('w')
 		create_file.close()
 
 

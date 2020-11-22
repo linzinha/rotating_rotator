@@ -27,10 +27,7 @@ def choose_key():
 
 	choose_position_key_button = Button(root, text="Define Position Key", command=open_position, width="30", height="3").pack(side=TOP, pady=8)
 
-	exit_button = Button(root, text="Exit", command=root.destroy, width="10", height="1").pack(side=RIGHT, padx=100)
+	exit_button = Button(root, text="Define Keys", command=root.destroy, width="10", height="1").pack(side=RIGHT, padx=100)
 
 
 	root.mainloop()
-
-
-choose_key()

@@ -5,7 +5,7 @@ from iterative_julius import *
 def create_document():
 	root = Tk()
 	root.configure(bg="aqua")
-	root.geometry("450x900")
+	root.geometry("450x700")
 	root.title("Write Text")
 	my_text = Text(root, width=40, height=10, font=("Helvetica", 16))
 	my_text.pack(pady=20)
@@ -25,8 +25,6 @@ def create_document():
 
 	heading = Label(text="Create or Open File:", bg="aqua", fg="black", font="10", width="450", height="3").pack()
 	encrypt_button = Button(root, text="Encrypt Text", command=encryptDoc, width="30", height="3").pack(pady=20)
-	save_button = Button(root, text="Save File", command=saveDoc, width="30", height="3").pack(side=TOP, pady=8)
-	close_button = Button(root, text="Close Window", command=root.destroy, width="10", height="1").pack(side=RIGHT, padx=100)
-
+	save_button = Button(root, text="Save File", command=lambda:[saveDoc(), root.destroy()], width="30", height="3").pack(side=TOP, pady=8)
 
 	root.mainloop()

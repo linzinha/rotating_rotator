@@ -22,8 +22,8 @@ def key_generator():
 
 
 	heading = Label(text="Generate a Fernet Key and a NumKey with the button below:", bg="aqua", fg="black", font="10", width="450", height="3").pack()
-	button1 = Button(root, text="Generate Key", command=saveKey, width="30", height="3").pack(side=TOP, pady=8)
-	button1 = Button(root, text="Generate NumKey", command=saveNumKey, width="30", height="3").pack(side=TOP, pady=8)
+	button1 = Button(root, text="Generate Fernet Key", command=saveKey, width="30", height="3").pack(side=TOP, pady=8)
+	button1 = Button(root, text="Generate Position Key", command=saveNumKey, width="30", height="3").pack(side=TOP, pady=8)
 
 	button3 = Button(root, text="Exit", command=root.destroy, width="10", height="1").pack(side=RIGHT, padx=100)
 

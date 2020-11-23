@@ -57,5 +57,3 @@ def create_document():
 
 
 	root.mainloop()
-
-create_document()

@@ -50,7 +50,7 @@ def open_fernet():
 		active_fernet_key = open_file_select
 
 def open_position():
-		open_file_select = filedialog.askopenfilename(filetypes=[("Txt files", "*.")])
+		open_file_select = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
 		global active_position_key
 		active_position_key = open_file_select
 
@@ -110,41 +110,41 @@ def lock_file():
 		encrypted_file.write(encrypted)
 
 
-# First define the cipher
+# define the cipher
 #iterative_julius.py - but don't call it
 
-# Second Ask if they have keys??
+# Ask if they have keys, open/generate
+
+print("Initializing script")
 
 ask_for_keys()
 
-# Third Set Keys
-# Opens a file and sets path for each key type. Redundancy issues 
-
-# Opens the tkinter dialog gui
-
-# Fourth decode position key
-
+print("Keys loaded")
+# try to decode position key
 
 try:
 	unlock_file()
+	print("Unlocking Position Key")
 except:
 	pass
-# Fifth open text editor and write text file
 
-print("Write your text")
+# open text editor and write text file
+print("Text editor opened")
 time.sleep(1)
 create_document()
 
-# Sixth append to position key
 
+# append to position key
 with open(active_position_key, 'a+') as write_obj:
 	csv_writer = writer(write_obj)
 	csv_writer.writerow(keystring)
 
+print("Position Key Updated")
 
-# Seventh encode position key
-# print("WEOEOEOEOEO" + active_position_key)
-    
+
+# encode position key
+
 lock_file()
+print("Key Locked")
 
-# Eighth append to another document (optional)
+# append to another document (optional)

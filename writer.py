@@ -29,6 +29,9 @@ def create_document():
 	save_button = Button(root, text="Save File", command=lambda:[saveDoc(), root.destroy()], width="30", height="3")
 	save_button.pack(side=TOP, pady=4)
 
+	heading = Label(text="Code below this point is not fully functional \n and should be ignored unless for testing purposes", bg="aqua", fg="black", font="10", width="450", height="3").pack()
+	
+
 	def open_file():
 		append_to = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
 
